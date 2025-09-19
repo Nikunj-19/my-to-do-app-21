@@ -6,13 +6,13 @@ const PORT = 5000;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve static files (CSS/JS)
-app.use(express.static("public"));
+// Serve static files (CSS/JS) without caching
+app.use(express.static("public", { maxAge: 0 }));
 
 // Set EJS as the template engine
 app.set("view engine", "ejs");
 
-// Disable EJS cache (important for seeing template updates)
+// Disable EJS cache (important for template updates)
 app.set("view cache", false);
 
 // In-memory tasks
@@ -25,9 +25,7 @@ app.get("/", (req, res) => {
 
 app.post("/add", (req, res) => {
   const task = req.body.task.trim();
-  if (task) {
-    tasks.push(task);
-  }
+  if (task) tasks.push(task);
   res.redirect("/");
 });
 
