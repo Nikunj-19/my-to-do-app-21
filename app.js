@@ -12,7 +12,7 @@ app.use(express.static("public", { maxAge: 0 }));
 // Set EJS as the template engine
 app.set("view engine", "ejs");
 
-// Disable EJS cache (important for template updates)
+// Disable EJS cache for template updates
 app.set("view cache", false);
 
 // In-memory tasks
@@ -36,6 +36,6 @@ app.post("/delete/:index", (req, res) => {
 });
 
 // Start server
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running at http://0.0.0.0:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running at http://0.0.0.0:${PORT}`);
 });
