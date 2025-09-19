@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List App </title>
-    <link rel="stylesheet" href="/style.css">
+    <title>To-Do List App</title>
+
+    <!-- CSS with cache-busting -->
+    <link rel="stylesheet" href="/style.css?v=<%= Date.now() %>">
 </head>
 <body>
     <div class="container">
@@ -24,5 +26,8 @@
             <% }) %>
         </ul>
     </div>
+
+    <!-- JS with cache-busting -->
+    <script src="/app.js?v=<%= Date.now() %>"></script>
 </body>
 </html>
