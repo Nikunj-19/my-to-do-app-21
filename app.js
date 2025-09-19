@@ -6,7 +6,7 @@ const PORT = 5000;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.set("view engine", "ejs");
+app.set("view engine", "false");
 
 // In-memory tasks
 let tasks = [];
