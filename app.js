@@ -5,8 +5,15 @@ const PORT = 5000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve static files (CSS/JS)
 app.use(express.static("public"));
-app.set("view engine", "false");
+
+// Set EJS as the template engine
+app.set("view engine", "ejs");
+
+// Disable EJS cache (important for seeing template updates)
+app.set("view cache", false);
 
 // In-memory tasks
 let tasks = [];
